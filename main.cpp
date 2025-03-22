@@ -30,7 +30,7 @@ int main () {
     do {
         cout<<"\t BIENVENIDO A LA CALCULADORA   "<<endl;
         cout<<"\t MENU  "<<endl;
-        cout<<"\t Seleccione una opción "<<endl;
+        cout<<"\t Seleccione una opcion "<<endl;
         cout<<"1. Sumar "<<endl;
         cout<<"2. Restar "<<endl;
         cout<<"3. Multiplicar "<<endl;
@@ -118,7 +118,7 @@ int ejercicio4() {
         return 0;
 }
 int ejercicio5() {
-    cout << "Determine la potencia de un número" << endl;
+    cout << "Determine la potencia de un numero" << endl;
     int base, exponente, resultado = 1;
     cout << "Ingrese la base: ";
     cin >> base;
@@ -141,12 +141,12 @@ int ejercicio6() {
     cout << "Determine la raíz cuadrada de un número" << endl;
 
     int num;
-    cout << "Ingrese un número: ";
+    cout << "Ingrese un numero: ";
     cin >> num;
 
     if (num < 0) {
-        cout << "No se puede calcular la raíz cuadrada de un número negativo." << endl;
-        return -1; 
+        cout << "No se puede calcular la raíz cuadrada de un numero negativo." << endl;
+        return -1;
     } else {
         int guess = num;
         while (guess * guess > num) {
@@ -161,12 +161,12 @@ int ejercicio7() {
     int n1;
     long long factorial = 1;
 
-    cout << "Determine el factorial de un número" << endl;
+    cout << "Determine el factorial de un numero" << endl;
     cout << "Ingresa un número entero no negativo: ";
     cin >> n1;
 
     if (n1 < 0) {
-        cout << "El factorial no está definido para números negativos." << endl;
+        cout << "El factorial no está definido para numeros negativos." << endl;
         return -1;
     }
 
