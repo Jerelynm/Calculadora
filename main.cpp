@@ -1,7 +1,6 @@
 //Calculadora basica en c++
 
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int ejercicio1();
@@ -119,63 +118,63 @@ int ejercicio4() {
         return 0;
 }
 int ejercicio5() {
-
-    double base, exponente, resultado;
-    cout<<"Determine la potencia de un numero"<<endl;
+    cout << "Determine la potencia de un número" << endl;
+    int base, exponente, resultado = 1;
     cout << "Ingrese la base: ";
     cin >> base;
-
     cout << "Ingrese el exponente: ";
     cin >> exponente;
 
+    if (exponente < 0) {
+        cout << "El exponente no puede ser negativo." << endl;
+        return -1;
+    }
 
-    resultado = pow(base, exponente);
+    for (int i = 0; i < exponente; i++) {
+        resultado *= base;
+    }
 
-    cout << base << " elevado a " << exponente << " es: " << resultado << endl;
-
+    cout << base << " elevado a " << exponente << " es " << resultado << endl;
     return 0;
 }
 int ejercicio6() {
+    cout << "Determine la raíz cuadrada de un número" << endl;
 
-        double numero, resultado;
+    int num;
+    cout << "Ingrese un número: ";
+    cin >> num;
 
-    cout<<"Determine la raiz cuadrada de un numero"<<endl;
-        cout << "Ingrese un número: ";
-        cin >> numero;
-
-        if (numero < 0) {
-            cout << "Error: No se puede calcular la raíz cuadrada de un número negativo." << std::endl;
-        } else {
-
-            resultado = sqrt(numero);
-
-            cout << "La raíz cuadrada de " << numero << " es: " << resultado << std::endl;
+    if (num < 0) {
+        cout << "No se puede calcular la raíz cuadrada de un número negativo." << endl;
+        return -1; 
+    } else {
+        int guess = num;
+        while (guess * guess > num) {
+            guess = (guess + num / guess) / 2;
         }
+        cout << "La raíz cuadrada entera de " << num << " es aproximadamente " << guess << endl;
+    }
 
-        return 0;
+    return 0;
 }
 int ejercicio7() {
     int n1;
     long long factorial = 1;
 
-    cout<<"Determine el factorial de un numero"<<endl;
-    cout << "Ingresa un numero entero no negativo: ";
+    cout << "Determine el factorial de un número" << endl;
+    cout << "Ingresa un número entero no negativo: ";
     cin >> n1;
 
-
     if (n1 < 0) {
-        cout << "El factorial no esta definido para numeros negativos." << endl;
-        return 1; // Salir del programa si el número es negativo
+        cout << "El factorial no está definido para números negativos." << endl;
+        return -1;
     }
-
 
     for (int i = 1; i <= n1; i++) {
         factorial *= i;
     }
 
-
     cout << "El factorial de " << n1 << " es: " << factorial << endl;
-
     return 0;
 }
 // TIP See CLion help at <a
